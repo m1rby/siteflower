@@ -1,0 +1,761 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
+
+
+body {
+    
+    font-family: 'Roboto', sans-serif; /* Основной шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Основной цвет фона */
+    background-image: url('freepik-export-20241113125723uk8z.png'); /* Укажите путь к вашему фону */
+    background-size: cover; /* Заполнение фона */
+    background-position: center; /* Центрирование фона */
+    position: relative; /* Для позиционирования псевдоэлемента */
+}
+
+
+header {
+    display: flex; /* Выстраивает элементы внутри в строку */
+    justify-content: space-between; /* Размещает заголовок и меню по краям */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    padding: 10px 20px; /* Отступы вокруг содержимого */
+    background-color: #f9f9f9; /* Светлый фон для заголовка (опционально) */
+    border-bottom: 1px solid #ccc; /* Добавить нижнюю границу (опционально) */
+}
+
+header h1 {
+    margin: 0;
+    color: hsl(0, 0%, 20%);
+    font-family: 'Montserrat', sans-serif; /* Заголовок с другим шрифтом */
+}
+
+nav {
+    display: flex; /* Располагает ссылки в строку */
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+nav a {
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    color: gray; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта ссылок */
+    padding: 5px 10px; /* Отступы внутри ссылок */
+    border-radius: 5px; /* Скругленные края ссылок */
+    transition: background-color 0.3s, color 0.3s; /* Анимация при наведении */
+}
+
+nav a:hover {
+    background-color: lightgray; /* Фон при наведении */
+    color: #ff6f61; /* Изменение цвета текста при наведении */
+}
+h1 {
+    margin: 0;
+    color: hsl(0, 0%, 20%);
+    font-family: 'Montserrat', sans-serif; /* Заголовок с другим шрифтом */
+}
+
+
+
+
+
+
+section {
+    text-align: center; /* Центрирование текста в секции */
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif; /* Заголовок с другим шрифтом */
+    margin: 20px 0;
+}
+
+.containercard {
+    display: flex; /* Располагает элементы в ряд */
+    overflow-x: auto; /* Включает горизонтальную прокрутку */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    gap: 20px; /* Промежутки между карточками */
+    scrollbar-width: none; /* Для Firefox: скрывает скроллбар */
+}
+
+.card {
+    flex: 0 0 auto; /* Устанавливает фиксированную ширину */
+    width: 200px; /* Ширина карточки */
+    text-align: center; /* Центрирование текста */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.arrow {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+.bouquet {
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для контейнера */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 10px; /* Увеличиваем расстояние между прямоугольниками */
+    border-radius: 15px; /* Закругленные углы */
+    border: 2px solid #ff6f61; /* Розовая обводка */
+    text-align: center;
+    width: 250px; /* Увеличена ширина для более аккуратного вида */
+    position: relative; /* Для позиционирования затемнения */
+    overflow: hidden; /* Скрытие лишнего контента */
+    height: 350px; /* Фиксированная высота контейнера */
+    transition: transform 0.3s; /* Плавная анимация преобразования */
+}
+
+.bouquet:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.bouquet img {
+    width: 100%; /* Ширина изображения 100% от контейнера */
+    height: 100%; /* Высота изображения 100% от контейнера */
+    object-fit: cover; /* Обеспечивает, что изображение будет заполнено по размеру контейнера */
+    border-radius: 15px 15px 0 0; /* Закругление только верхних углов */
+}
+
+.dark-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%; /* Высота затемнения */
+    background: rgba(0, 0, 0, 0.3); /* Уменьшено затемнение */
+    border-radius: 0 0 15px 15px; /* Закругление нижних углов */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Цвет текста на затемнении */
+    font-weight: bold; /* Жирный текст */
+    padding: 10px; /* Отступы */
+}
+
+footer {
+    bottom: 0; /* Прикреплено к нижней части */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 204, 204, 0.9);
+    color: #fff;
+    padding: 20px 0 ;
+    text-align: center;
+}
+.carousel {
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    overflow: hidden; /* Скрытие излишков при прокрутке */
+}
+
+.card {
+    box-sizing: border-box;
+    width: 200px; /* Увеличиваем ширину карточки на 10px */
+    height: 264px; /* Увеличиваем высоту карточки на 10px */
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    position: relative; /* Для .dark-overlay */
+    margin: 40px; /* Увеличиваем отступ между карточками на 5px */
+}
+
+.card img {
+    width: 100%; /* Ширина изображения 100% от родителя */
+    height: 100%; /* Высота изображения 100% от родителя */
+    object-fit: cover; /* Заполняет карточку, сохраняя пропорции */
+    border-radius: 17px; /* Радиус границ, если нужно */
+    display: block; /* Убирает нижний отступ у изображений */
+}
+
+.card:hover {
+    border: 1px solid rgb(248, 9, 141);
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+#close {
+    position: absolute;
+    top: 10px; /* Положение сверху */
+    right: 10px; /* Положение справа */
+    font-size: 24px; /* Увеличиваем размер шрифта */
+    color: white; /* Цвет крестика */
+    cursor: pointer; /* Указываем, что это кликабельный элемент */
+    z-index: 10; /* Убедимся, что крестик выше других элементов */
+}
+.about-section {
+    text-align: center; /* Центрирование текста в секции */
+    margin-top: 20px;
+    padding: 20px; /* Добавлено отступы для секции */
+}
+.row {
+    display: flex;
+    justify-content: center; /* Центрирование содержимого */
+    flex-wrap: wrap; /* Перенос элементов на новую строку */
+}
+
+.about-image {
+    width: 50%; /* Изображения занимают 100% ширины контейнера */
+    height: 50%; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 10px; /* Закругление углов */
+    margin: 10px 0; /* Отступы между изображениями */
+}
+
+.section-divider {
+    border: 1px solid #ff6f61; /* Разделительная линия с цветом */
+    margin: 40px 0; /* Отступы сверху и снизу */
+}
+
+.team-members {
+    display: flex;
+    justify-content: center; /* Центрирование карточек команды */
+    flex-wrap: wrap; /* Перенос карточек на новую строку */
+}
+
+.member {
+    width: 30%; /* Ширина карточки члена команды */
+    margin: 20px; /* Отступы между карточками */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s; /* Плавная анимация при наведении */
+}
+
+.member:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.member-image {
+    width: 100%; /* Ширина изображения 100% от карточки */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 50%; /* Закругление изображения */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+
+
+.contacts-section {
+    text-align: center; /* Центрирование текста в секции */
+    margin: 0; /* Убираем отступы сверху и снизу */
+    padding: 20px; /* Добавлено отступы для секции */
+    background-color: #f8f8f8; /* Фоновый цвет для всей секции */
+}
+
+.map {
+    width: calc(100% - 40px); /* Уменьшаем ширину на 40px для отступов */
+    height: 50vh; /* Высота карты 50% от высоты окна */
+    position: relative; /* Позиционирование для абсолютного позиционирования */
+    margin: 20px auto; /* Центрирование с отступами сверху и снизу */
+    border: 2px solid #ccc; /* Рамка вокруг карты для выделения */
+    border-radius: 8px; /* Скругление углов рамки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для выделения карты */
+    padding: 10px; /* Отступы внутри карты */
+    background-color: #fff; /* Фон для карты */
+}
+
+.contact-info {
+    padding: 40px; /* Отступы для раздела с контактами */
+    background-color: #fff; /* Фон для раздела с контактами */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для раздела */
+    width: 100%; /* Ширина 100% для растягивания на весь экран */
+    max-width: 1200px; /* Максимальная ширина для предотвращения слишком большого растяжения */
+    margin: 20px auto; /* Центрирование с отступом сверху и снизу */
+    border-radius: 8px; /* Скругление углов */
+}
+
+.contact-info h2 {
+    margin-top: 0; /* Убираем верхний отступ у заголовка */
+}
+
+.contact-info p {
+    margin: 10px 0; /* Отступы для текста */
+}
+
+.contact-info ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы списка */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.contact-info li {
+    margin-bottom: 10px; /* Отступы между пунктами списка */
+}
+
+.contact-info i {
+    margin-right: 10px; /* Отступы между иконкой и текстом */
+}
+ul {
+    display: flex;
+    justify-content: center; /* Центрирование иконок */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    padding: 0; /* Убираем отступы списка */
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: block;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: .5s;
+}
+
+ul li a:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul li a .fab {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(0deg, #fff, #ddd);
+    border-radius: 50%;
+    line-height: calc(60px - 12px);
+    font-size: 24px;
+    color: #262626;
+    transition: .5s;
+}
+
+ul li:nth-child(1) a:hover .fab {
+    color: #3b5998; /* phone */
+}
+
+ul li:nth-child(2) a:hover .fab {
+    color: #00aced; /* vk */
+}
+
+ul li:nth-child(3) a:hover .fab {
+    color: #dd4b39; /* Instagram */
+}
+
+ul li:nth-child(4) a:hover .fab {
+    color: #e4405f; /* mail */
+}
+
+ul li:nth-child(5) a:hover .fab {
+    color: #3b5998; /* telegram */
+}
+
+
+.body1 {
+background: #DFC2F2;
+	background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);
+	background-attachment: fixed;	
+	background-size: cover;
+	}
+
+    #container2{
+        box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+        background: rgba(255, 255, 255, 0.90);
+        text-align: center;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5em auto;
+        height: 350px;
+        width: 700px;
+    }
+
+/* 	Product details  */
+.product-details {
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 40%;
+
+}
+
+/* The most important information about the product */
+#container2 .product-details > p {
+	font-family: 'Farsan', cursive;
+	text-align: center;
+	font-size: 18px;
+	color: #7d7d7d;
+	
+}
+
+/* control */
+
+.control{
+	position: absolute;
+	bottom: 20%;
+	left: 22.8%;
+	
+}
+/* the Button */
+.btn-buy {
+    display: flex;
+    align-items: center;
+    background: #eb6cab;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.btn-buy:hover {
+    transform: translateY(-4px);
+}
+
+.btn-buy .price {
+    margin-right: 50px;
+    font-family: 'Farsan', cursive;
+    font-size: 1.2em;
+}
+
+.btn-buy .shopping-cart {
+    margin-left: 70px;
+    font-size: 1.1em;
+    transition: transform 0.3s;
+}
+
+.btn-buy:hover .shopping-cart {
+    transform: translateX(0);
+}
+
+.btn-buy .buy {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+
+/* product image  */
+.product-image {
+	transition: all 0.3s ease-out;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	float: right;
+	width: 50%;
+	display: inline-block;
+}
+
+#container2 img {width: 100%;height: 100%;}
+
+.info {
+    background: rgba(27, 26, 26, 0.9);
+    font-family: 'Farsan', cursive;
+    transition: all 0.3s ease-out;
+    transform: translateX(-100%);
+    position: absolute;
+    line-height: 1.9;
+    text-align: left;
+    font-size: 120%;
+    cursor: no-drop;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.info h2 {text-align: center}
+.product-image:hover .info{transform: translateX(0);}
+
+.info ul li{transition: 0.3s ease;}
+.info ul li:hover{transform: translateX(0px) scale(1);}
+
+.product-image:hover img {transition: all 0.3s ease-out;}
+.product-image:hover img {transform: scale(1.2, 1.2);}
+
+/* Затемнение фона */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Увеличено затемнение фона */
+    z-index: 5; /* Убедитесь, что он выше других элементов */
+    display: none; /* Скрываем по умолчанию */
+}
+.hidden {
+    display: none;
+}
+
+
+#details-container {
+    position: fixed; /* Фиксированное положение */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Сдвигаем на половину ширины и высоты */
+    z-index: 10; /* Убедитесь, что он выше затемнения */
+}
+
+
+/* Стили для формы обратной связи */
+.feedback-form {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9f9f9;
+}
+
+.feedback-form h2 {
+    text-align: center;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.feedback-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: darkgray;
+}
+
+#order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Скрыто по умолчанию */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#order-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#order-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#close-order-modal {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+}
+
+#close-order-modal:hover {
+    background-color: #e53935;
+}
+/* Стиль для секции "Лидер продаж" */
+#bestseller {
+    background-color: #fff7fa; /* Укажите путь к вашему фону */
+    background-repeat: no-repeat; /* Отключает повтор изображения */
+    background-size: cover; /* Растягивает изображение, чтобы заполнить блок */
+    background-position: center; /* Центрирует изображение внутри блока */
+    margin: 30px auto;
+    font-size: 40px;
+    padding: 20px;
+    
+    border-radius: 10px;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    width: 1200px;
+    height: 600px;
+}
+
+/* Карточка лидера продаж */
+.bestseller-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Изображение слева */
+.bestseller-image {
+    width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Детали справа */
+.bestseller-details {
+    flex: 1; /* Занимает оставшееся пространство */
+    display: flex; /* Включаем flex */
+    flex-direction: column; /* Расположение элементов внутри по вертикали */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+}
+
+.bestseller-details h3 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.bestseller-details p {
+    font-size: 30px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.bestseller-details .price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #d9534f;
+}
+
+.bestseller-details .btn-buy {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex-direction: column;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 250px;
+    height: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.bestseller-details .btn-buy:hover {
+    background-color: #45a049;
+}
+
+.bestseller-details .shopping-cart {
+    font-size: 18px;
+}
+
+
+#all-bouquets {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Букеты</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Наши Букеты</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>Выберите свой букет</h2>
+        <div class="carousel">
+            <button class="arrow left-arrow">&#9664;</button> 
+            <div class="containercard">
+                <div class="card" data-description="Этот букет подарит вам незабываемые впечатления о прошедшей весне и станет прекарсным украшением к вашему домашнему и уютному интерьеру." data-price="1500 ₽">
+                    <img src="xD.jpg" alt="Букет 1">
+                    <div class="dark-overlay">Букетик 1</div>
+                </div>
+                <div class="card" data-description="Это красивый букет из лилий." data-price="2000 ₽">
+                    <img src="images/bouquet2.jpg" alt="Букет 2">
+                    <div class="dark-overlay">Букетик 2</div>
+                </div>
+                <div class="card" data-description="Это красивый букет из тюльпанов." data-price="1800 ₽">
+                    <img src="images/bouquet3.jpg" alt="Букет 3">
+                    <div class="dark-overlay">Букетик 3</div>
+                </div>
+                <div class="card" data-description="Это красивый букет из ромашек." data-price="1200 ₽">
+                    <img src="images/bouquet4.jpg" alt="Букет 4">
+                    <div class="dark-overlay">Букетик 4</div>
+                </div>
+                <div class="card" data-description="Это красивый букет из хризантем." data-price="1600 ₽">
+                    <img src="images/bouquet5.jpg" alt="Букет 5">
+                    <div class="dark-overlay">Букетик 5</div>
+                </div>
+                <div class="card" data-description="Это красивый букет из орхидей." data-price="2500 ₽">
+                    <img src="images/bouquet6.jpg" alt="Букет 6">
+                    <div class="dark-overlay">Букетик 6</div>
+                </div>
+            </div>
+            <button class="arrow right-arrow">&#9654;</button> <!-- Кнопка вправо -->
+        </div>
+    </section>
+
+    <section id="bestseller">
+        <h2>Лидер продаж</h2>
+        <div class="bestseller-card">
+            <img src="xD.jpg" alt="Лидер продаж - Букетик 1" class="bestseller-image">
+            <div class="bestseller-details">
+                <h3>Букетик 1</h3>
+                <p>Этот букет подарит вам незабываемые впечатления о прошедшей весне и станет прекрасным украшением вашего домашнего интерьера.</p>
+                <p class="price">Цена: 1500 ₽</p>
+                <button class="btn-buy">
+                    <span class="buy">Купить</span> 
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="feedback-form">
+        <h2>Не можете выбрать? Свяжитесь с нами!</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+    
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+    
+            <label for="message">Ваше номер телефона:</label>
+            <input type="tel" id="name" name="name" placeholder="+7-900-000-00-00" required>
+    
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Контейнер для подробной информации о букете -->
+    <div id="overlay" class="hidden"></div>
+<div id="details-container" class="hidden">
+    <div id="container2">
+        <div class="product-details">
+            <h1 id="product-name">Название букета</h1>
+            <p class="information">Описание букета</p>
+            <button class="btn-buy">
+                <span class="price" id="product-price"></span> 
+                <span class="buy">Купить</span> 
+            </button>
+        </div>
+        <div class="product-image">
+            <img id="product-image" src="" alt="Изображение букета">
+            <div class="info">
+                <h2>Дополнительная информация</h2>
+                <ul>
+                    <li>Амогус</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<!-- Модальное окно для заказа -->
+<div id="order-modal" class="hidden">
+    <div id="order-container">
+        <h2>Оформление заказа</h2>
+        <form id="order-form">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Ваш телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Адрес доставки:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <button type="submit">Оформить заказ</button>
+        </form>
+        <button id="close-order-modal" class="close-btn">Закрыть</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
